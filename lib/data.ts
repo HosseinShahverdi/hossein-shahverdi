@@ -39,10 +39,10 @@ export const profile = {
   timezone: "Asia/Tehran",
   email: "h.shahverdi1997@gmail.com",
   links: {
-    github: "https://github.com/your-handle", // TODO: real handle
-    linkedin: "https://www.linkedin.com/in/your-handle", // TODO
-    scholar: "#", // TODO: Google Scholar
-    lab: "#", // TODO: NAIRG lab page
+    github: "https://github.com/HosseinShahverdi", // TODO: real handle
+    linkedin: "https://www.linkedin.com/in/hossein-shahverdi/", // TODO
+    scholar: "https://scholar.google.com/citations?user=dL6DWiQAAAAJ&hl=en",
+    lab: "https://nairg.org/",
   },
 };
 
