@@ -91,6 +91,27 @@ export const engineeringSkills: Skill[] = [
 
 export const engineeringProjects: Project[] = [
   {
+    id: "recon-console",
+    title: "Recon Console",
+    tagline: "Attack-surface recon that tells you what changed.",
+    description:
+      "A dashboard that combines subfinder, amass and httpx results, stores them per scope, and re-scans to flag new subdomains automatically. Filter to what changed and export it to your next tool.",
+    highlights: [
+      "Passive and active subdomain enumeration in one view",
+      "Diffs each re-scan against stored assets and flags new hosts",
+      "Live status, port, CDN and technology fingerprinting",
+      "Filter with is:new to isolate what changed",
+    ],
+    tags: ["Python", "subfinder", "amass", "httpx", "Security"],
+    category: "Web + Security",
+    status: "Building",
+    year: "2026",
+    art: "radar",
+    featured: true,
+    demo: "/demos/recon-console.html",
+    github: "https://github.com/HosseinShahverdi/recon_dashboard",
+  },
+  {
     id: "phantomscope",
     title: "PhantomScope",
     tagline: "Attack-surface recon you can actually read.",
