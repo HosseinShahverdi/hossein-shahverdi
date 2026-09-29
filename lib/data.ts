@@ -104,10 +104,12 @@ export const engineeringProjects: Project[] = [
     ],
     tags: ["Python", "subfinder", "amass", "httpx", "Security"],
     category: "Web + Security",
-    status: "Building",
+    status: "Published",
     year: "2026",
     art: "radar",
     featured: true,
+    demo: "/demos/recon-console.html",
+
     github: "https://github.com/HosseinShahverdi/recon_dashboard",
   },
   {
