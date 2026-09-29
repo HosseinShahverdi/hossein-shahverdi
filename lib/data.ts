@@ -108,8 +108,7 @@ export const engineeringProjects: Project[] = [
     year: "2026",
     art: "radar",
     featured: true,
-    demo: "/demos/recon-console.html",
-
+    demo: "/demos/recon-console/",
     github: "https://github.com/HosseinShahverdi/recon_dashboard",
   },
   {
