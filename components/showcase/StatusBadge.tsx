@@ -1,5 +1,8 @@
+"use client";
+
 import type { Status } from "@/lib/data";
 import { cn } from "@/lib/utils";
+import { useI18n } from "@/lib/i18n";
 
 const STYLE: Record<Status, { cls: string; pulse?: boolean }> = {
   Shipped: { cls: "text-emerald-300 border-emerald-400/30 bg-emerald-400/10" },
@@ -11,6 +14,7 @@ const STYLE: Record<Status, { cls: string; pulse?: boolean }> = {
 };
 
 export default function StatusBadge({ status, className }: { status: Status; className?: string }) {
+  const { t } = useI18n();
   const s = STYLE[status];
   return (
     <span
@@ -24,7 +28,7 @@ export default function StatusBadge({ status, className }: { status: Status; cla
         {s.pulse && <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-current opacity-60" />}
         <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-current" />
       </span>
-      {status}
+      {t.status[status]}
     </span>
   );
 }

@@ -24,6 +24,7 @@ export default {
           "0%,100%": { transform: "translate3d(0,0,0) scale(1)" },
           "50%": { transform: "translate3d(4%, -6%, 0) scale(1.08)" },
         },
+        "float-y": { "0%,100%": { transform: "translateY(0)" }, "50%": { transform: "translateY(-12px)" } },
         blink: { "0%,49%": { opacity: "1" }, "50%,100%": { opacity: "0" } },
       },
       animation: {
@@ -31,6 +32,7 @@ export default {
         "spin-slow": "spin-slow 6s linear infinite",
         float: "float 18s ease-in-out infinite",
         blink: "blink 1s step-end infinite",
+        "float-y": "float-y 6s ease-in-out infinite",
       },
     },
   },

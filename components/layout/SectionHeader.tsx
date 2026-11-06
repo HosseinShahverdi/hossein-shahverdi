@@ -21,8 +21,8 @@ export default function SectionHeader({
         <h2
           className={
             variant === "engineering"
-              ? "font-display text-[clamp(2.4rem,6vw,4.75rem)] font-extrabold leading-[0.95] tracking-tight text-white"
-              : "font-serif text-[clamp(2.8rem,7vw,5.5rem)] leading-[0.95] text-white"
+              ? "hyphens-auto break-words font-display text-[clamp(2rem,5.4vw,4.4rem)] font-bold leading-[1] tracking-tight text-white"
+              : "hyphens-auto break-words font-serif text-[clamp(2.6rem,7vw,5.5rem)] leading-[0.95] text-white"
           }
         >
           <SplitWords text={title} />

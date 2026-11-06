@@ -10,15 +10,12 @@ import "./globals.css";
 import Providers from "@/components/core/Providers";
 
 export const metadata: Metadata = {
-  title: {
-    default: "Hossein Shahverdi | AI, security and full-stack",
-    template: "%s | Hossein Shahverdi",
-  },
+  title: "Hossein Shahverdi — AI research & software engineering",
   description:
-    "AI engineer, security practitioner and full-stack developer. Lightweight Transformers, medical imaging research, and secure web products.",
+    "Portfolio of Hossein Shahverdi: efficient deep learning, medical AI and secure full-stack engineering.",
   openGraph: {
     title: "Hossein Shahverdi",
-    description: "Two worlds: engineering and research.",
+    description: "One scroll, two worlds: research & AI, and programming.",
     type: "website",
   },
 };
@@ -44,9 +41,6 @@ export default function RootLayout({
         <noscript>
           <style>{`.hs-loader{display:none!important}`}</style>
         </noscript>
-        <a href="#main" className="skip-link">
-          Skip to content
-        </a>
         <Providers>{children}</Providers>
       </body>
     </html>
