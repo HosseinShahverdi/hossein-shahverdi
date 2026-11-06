@@ -70,7 +70,7 @@ export default function ResearchScene() {
           style={{ scale: robotScale, opacity: robotOpacity }}
           className="absolute inset-x-0 bottom-[50%] top-[11%] z-10 flex justify-center lg:inset-y-[11%] lg:left-[22%] lg:right-[22%]"
         >
-          <Robot progress={smooth} label="" className="h-full w-auto max-w-full" />
+          <Robot progress={smooth} interactive label={t.research.robotLabel} cursorLabel={t.research.poke} className="h-full w-auto max-w-full" />
         </motion.div>
 
         {/* Stage content */}

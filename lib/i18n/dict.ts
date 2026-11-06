@@ -22,6 +22,8 @@ export const en = {
     title: "Research & AI",
     intro: "I study how to make learning systems smaller, clearer and safer, then I build them into things that run.",
     scrollCue: "Scroll to explore",
+    poke: "Poke",
+    robotLabel: "The sentinel. It follows your cursor; activate it to wake it.",
     stage: "Stage",
     stages: [
       { key: "AI", title: "Artificial Intelligence", text: "Intelligent systems that sense, decide and explain. My focus is making them efficient and trustworthy enough to leave the lab.", chips: ["Efficient AI", "Trustworthy AI", "Edge inference"] },
@@ -120,6 +122,8 @@ export const de: Dict = {
     title: "Forschung & KI",
     intro: "Ich erforsche, wie lernende Systeme kleiner, verständlicher und sicherer werden, und baue sie in Anwendungen ein, die wirklich laufen.",
     scrollCue: "Scrollen zum Erkunden",
+    poke: "Anstupsen",
+    robotLabel: "Der Wächter. Er folgt dem Cursor; aktivieren Sie ihn, um ihn zu wecken.",
     stage: "Etappe",
     stages: [
       { key: "AI", title: "Künstliche Intelligenz", text: "Intelligente Systeme, die wahrnehmen, entscheiden und erklären. Mein Ziel: effizient und vertrauenswürdig genug, um das Labor zu verlassen.", chips: ["Effiziente KI", "Vertrauenswürdige KI", "Edge-Inferenz"] },
