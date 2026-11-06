@@ -1,5 +1,5 @@
-import Gateway from "@/components/gateway/Gateway";
+import Experience from "@/components/experience/Experience";
 
 export default function Home() {
-  return <Gateway />;
+  return <Experience />;
 }

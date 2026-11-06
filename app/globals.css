@@ -233,3 +233,20 @@ html.has-cursor * {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* ---------- Robot ---------- */
+@keyframes robot-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes robot-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.55; } }
+@keyframes robot-flame { 0%, 100% { transform: scaleY(1); } 50% { transform: scaleY(1.25); } }
+@keyframes robot-blink { 0%, 92%, 100% { transform: scaleY(1); } 96% { transform: scaleY(0.1); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+.robot-float { animation: robot-float 5.5s ease-in-out infinite; }
+.robot-pulse { animation: robot-pulse 2.6s ease-in-out infinite; }
+.robot-flame { animation: robot-flame 0.9s ease-in-out infinite; transform-box: fill-box; transform-origin: top center; }
+.robot-blink { animation: robot-blink 6s infinite; transform-box: fill-box; transform-origin: center; }
+.robot-spin { animation: spin 14s linear infinite; transform-box: fill-box; transform-origin: center; }
+
+@keyframes scroll-cue {
+  0% { transform: translateY(-120%); }
+  100% { transform: translateY(260%); }
+}

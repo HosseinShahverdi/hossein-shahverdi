@@ -9,6 +9,7 @@ import { TiltCard } from "@/components/core/TiltCard";
 import { Reveal } from "@/components/core/Reveal";
 import { GithubIcon } from "@/components/core/icons";
 import { cn } from "@/lib/utils";
+import { useI18n } from "@/lib/i18n";
 import ProjectArt from "./ProjectArt";
 import StatusBadge from "./StatusBadge";
 
@@ -22,7 +23,7 @@ export default function ProjectShowcase({ projects, variant }: { projects: Proje
 
   return (
     <>
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 lg:grid-flow-dense">
         {projects.map((p, i) => (
           <Reveal
             key={p.id}
@@ -55,14 +56,15 @@ function ProjectCard({
   variant: Variant;
   onOpen: () => void;
 }) {
+  const { t } = useI18n();
   return (
     <motion.article layoutId={`card-${p.id}`} className="h-full rounded-[28px]">
       <TiltCard className="glass flex h-full flex-col overflow-hidden rounded-[28px]">
         <button
           type="button"
           onClick={onOpen}
-          aria-label={`Open details for ${p.title}`}
-          data-cursor-label="Open"
+          aria-label={`${t.projects.openDetails} ${p.title}`}
+          data-cursor-label={t.projects.open}
           className="focus-ring absolute inset-0 z-10 rounded-[28px]"
         />
         <div className={cn("relative overflow-hidden border-b border-white/[0.06]", p.featured ? "h-56 sm:h-64" : "h-48")}>
@@ -118,6 +120,7 @@ function ProjectCard({
 }
 
 function ProjectLinks({ project: p, className }: { project: Project; className?: string }) {
+  const { t } = useI18n();
   const live = p.demo && p.demo !== "#";
   const code = p.github && p.github !== "#";
   const paper = p.paper && p.paper !== "#";
@@ -127,7 +130,7 @@ function ProjectLinks({ project: p, className }: { project: Project; className?:
   if (!live && !code && !paper) {
     return (
       <p className={cn("text-[13px] text-zinc-500", className)}>
-        {p.status === "Concept" || p.status === "Planned" ? "Repository opens when work starts" : "Links coming soon"}
+        {p.status === "Concept" || p.status === "Planned" ? t.projects.reposSoon : t.projects.linksSoon}
       </p>
     );
   }
@@ -135,17 +138,17 @@ function ProjectLinks({ project: p, className }: { project: Project; className?:
     <div className={cn("flex flex-wrap gap-2", className)}>
       {live && (
         <a href={p.demo} target="_blank" rel="noreferrer" className={cn(base, "border-accent/40 bg-accent/10 text-white hover:bg-accent/20")}>
-          Live demo <ArrowUpRight size={14} />
+          {t.projects.liveDemo} <ArrowUpRight size={14} />
         </a>
       )}
       {code && (
         <a href={p.github} target="_blank" rel="noreferrer" className={cn(base, "border-white/10 text-zinc-300 hover:text-white")}>
-          <GithubIcon className="h-3.5 w-3.5" /> Source
+          <GithubIcon className="h-3.5 w-3.5" /> {t.projects.source}
         </a>
       )}
       {paper && (
         <a href={p.paper} target="_blank" rel="noreferrer" className={cn(base, "border-white/10 text-zinc-300 hover:text-white")}>
-          <FileText size={14} /> Read the paper
+          <FileText size={14} /> {t.projects.paper}
         </a>
       )}
     </div>
@@ -153,6 +156,7 @@ function ProjectLinks({ project: p, className }: { project: Project; className?:
 }
 
 function ProjectModal({ project: p, variant, onClose }: { project: Project; variant: Variant; onClose: () => void }) {
+  const { t } = useI18n();
   const closeRef = useRef<HTMLButtonElement>(null);
 
   useEffect(() => {
@@ -197,7 +201,7 @@ function ProjectModal({ project: p, variant, onClose }: { project: Project; vari
               ref={closeRef}
               type="button"
               onClick={onClose}
-              aria-label="Close"
+              aria-label={t.a11y.close}
               className="focus-ring absolute right-4 top-4 grid h-10 w-10 place-items-center rounded-full border border-white/15 bg-black/50 text-white backdrop-blur transition-colors hover:bg-black/80"
             >
               <X size={18} />

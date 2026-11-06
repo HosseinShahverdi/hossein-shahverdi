@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, animate, motion } from "framer-motion";
 import { useIntro } from "./IntroProvider";
+import { useI18n } from "@/lib/i18n";
 import { EASE_IN_OUT, EASE_OUT } from "@/lib/utils";
 
 const NAME = "Hossein Shahverdi";
@@ -10,6 +11,7 @@ const NAME = "Hossein Shahverdi";
 /** First-visit intro: a counter fills while the name assembles, then the screen wipes upward. */
 export default function Loader() {
   const { setReady } = useIntro();
+  const { t } = useI18n();
   const [visible, setVisible] = useState(true);
   const [count, setCount] = useState(0);
   const root = useRef<HTMLDivElement>(null);
@@ -54,14 +56,14 @@ export default function Loader() {
         <motion.div
           ref={root}
           role="status"
-          aria-label="Loading"
+          aria-label={t.a11y.loading}
           className="hs-loader fixed inset-0 z-[100] flex flex-col justify-between bg-[#040608] p-6 sm:p-10"
           style={{ clipPath: "inset(0% 0% 0% 0%)" }}
           exit={{ clipPath: "inset(0% 0% 100% 0%)", transition: { duration: 0.95, ease: EASE_IN_OUT } }}
         >
           <div className="flex justify-between text-sm text-zinc-500">
-            <span>Portfolio 2026</span>
-            <span className="hidden sm:inline">AI, security and full-stack</span>
+            <span>{t.loader.kicker}</span>
+            <span className="hidden sm:inline">{t.loader.sub}</span>
           </div>
 
           <h2 className="font-display text-[clamp(2.4rem,9vw,7.5rem)] font-extrabold leading-none tracking-tight text-white">
@@ -89,7 +91,7 @@ export default function Loader() {
           <div>
             <div className="mb-4 flex items-end justify-between">
               <span className="max-w-[16rem] text-sm text-zinc-500">
-                Compiling models, hardening endpoints, warming up the GPU.
+                {t.loader.line}
               </span>
               <span className="font-display text-6xl font-extrabold tabular-nums text-[#22e3ff] sm:text-8xl">
                 {String(count).padStart(3, "0")}

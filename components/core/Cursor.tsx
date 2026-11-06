@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import { cn } from "@/lib/utils";
 
@@ -13,7 +12,6 @@ const SIZE: Record<Variant, number> = { default: 30, hover: 56, label: 84 };
  * element has data-cursor-label. Disabled on touch and with reduced motion.
  */
 export default function Cursor() {
-  const pathname = usePathname();
   const [enabled, setEnabled] = useState(false);
   const [variant, setVariant] = useState<Variant>("default");
   const [label, setLabel] = useState("");
@@ -71,7 +69,7 @@ export default function Cursor() {
 
   useEffect(() => {
     setVariant("default");
-  }, [pathname]);
+  }, []);
 
   if (!enabled) return null;
   const size = SIZE[variant];
